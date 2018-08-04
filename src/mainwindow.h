@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-
+#include "call_back.h"
 namespace Ui {
 class MainWindow;
 }
