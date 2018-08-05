@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "call_back.h"
+
 namespace Ui {
 class MainWindow;
 }
@@ -14,10 +14,10 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-
+    int foo( int i ) { return i; }
 private slots:
     void on_actionExit_triggered();
-
+    void on_pushbutton();
 private:
     Ui::MainWindow *ui;
 };

@@ -7,11 +7,13 @@
 [18:17] <black_13> that sounds good
 */
 
+
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-void call_back(const void *object);
+struct MainWindow;
+int call_M_foo(struct MainWindow* m, int i);
+int f(struct MainWindow* p, int j) ;
 
 #ifdef __cplusplus
 }

@@ -8,7 +8,7 @@
             "name": "(lldb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "enter program name, for example ${workspaceFolder}/build/cmake-qt-project",
+            "program": "enter program name, for example ${workspaceFolder}/build/helloworld",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
@@ -20,7 +20,7 @@
             "type": "lldb",
             "request": "launch",
             "name": "Debug",
-            "program": "${workspaceFolder}/build/cmake-qt-project",
+            "program": "${workspaceFolder}/build/helloworld",
             "args": [],
             "cwd": "${workspaceFolder}"
         }
