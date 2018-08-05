@@ -17,6 +17,8 @@ set(SOURCES
   src/call_back.h
   src/call_back.c
   src/mainwindow.h
+  src/s7.c
+  src/s7.h
 )
 
 set(FORMS
