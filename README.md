@@ -1,3 +1,3 @@
-# cmake-qt-project
+# CMakeQt5Example
 
-This is a blank template for making a Qt project in cmake
+This code is example code of how to use Qt5 with CMake to easily create desktop applications. You can read the write up about it on my blog. 

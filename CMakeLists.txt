@@ -1,34 +1,29 @@
-cmake_minimum_required(VERSION 2.8.11)
 
-project(testproject)
+cmake_minimum_required(VERSION 3.0.0 FATAL_ERROR)
 
-# Find includes in corresponding build directories
+project(GettingStartedWithCmake LANGUAGES CXX)
+
+# find Qt5 and required components
+find_package(Qt5 COMPONENTS REQUIRED Core Gui Widgets)
+
+# need this to include the auto generated ui_mainwindow.h 
+# file from the qt5_wrap_ui call below.
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
-# Instruct CMake to run moc automatically when needed.
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_PREFIX_PATH /usr/local/qt5/lib/cmake)
 
-# Find the QtWidgets library
-find_package(Qt5Widgets)
+set(project_sources 
+	mainwindow.cpp
+	main.cpp)
 
-set(SOURCES
-  src/main.cpp
-  src/mainwindow.cpp
-  src/call_back.h
-  src/call_back.c
-  src/mainwindow.h
-  src/s7.c
-  src/s7.h
-)
+set(project_headers
+	mainwindow.h)
 
-set(FORMS
-  src/mainwindow.ui
-)
+set(project_ui
+	mainwindow.ui)
 
-qt5_wrap_ui(FORM_H src/mainwindow.ui)
+# wrap the ui file to a c++ header
+qt5_wrap_ui(ui_wrap ${project_ui})
+qt5_wrap_cpp(moc_sources ${project_headers})
 
-# Tell CMake to create the helloworld executable
-add_executable(helloworld ${SOURCES} ${FORM_H})
+add_executable(GettingStartedWithCmake ${project_sources} ${project_headers} ${ui_wrap} ${moc_sources})
 
-# Use the Widgets module from Qt 5.
-target_link_libraries(helloworld Qt5::Widgets)
+target_link_libraries(GettingStartedWithCmake Qt5::Core Qt5::Gui Qt5::Widgets) 
